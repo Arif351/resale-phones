@@ -2,7 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Components/Pages/Home/Home";
 import Main from "../Components/Pages/Layout/Main/Main";
 import Login from "../Components/Pages/Login/Login";
+import AppleLoader from "../Components/Pages/Shared/AllBrands/Apple/AppleLoader";
+import RealmeCardLoader from "../Components/Pages/Shared/AllBrands/Realme/RealmeCardLoader";
 import AllPhones from "../Components/Pages/Shared/PhoneCtg/AllPhones";
+import Signup from "../Components/Pages/Signup/Signup";
 
 const router = createBrowserRouter([
     {
@@ -15,15 +18,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allPhones/:id',
-                element: <AllPhones></AllPhones>,
-                // loader: ({ params }) => fetch(`http://localhost:3000/allPhones/${params.id}`)
-
+                element: <AllPhones></AllPhones>
             },
 
-            {
-                path: 'login',
-                element: <Login></Login>
-            }
+            // {
+            //     path: '/login',
+            //     element: <Login></Login>
+            // },
+            // {
+            //     path: '/signup',
+            //     element: <Signup></Signup>
+            // }
         ]
     }
 ]);

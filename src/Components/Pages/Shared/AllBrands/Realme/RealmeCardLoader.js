@@ -1,31 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import AllCategories from './AllCategories';
+import Realme from './Realme';
 
-
-
-const PhCategories = () => {
-    // const [categories, setCategories] = useState([]);
-
+const RealmeCardLoader = () => {
     const { data: categories = [] } = useQuery({
         queryKey: ['allPhones'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allPhones')
+            const res = await fetch('http://localhost:5000/realme')
             const data = await res.json();
             console.log(data);
             return data;
         }
 
     });
-
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/allPhones')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setCategories(data);
-    //         })
-    // }, [])
-
     return (
         <section className='my-6'>
             <p className="text-4xl text-center text-sky-600 font-bold pb-8">Available Brands</p>
@@ -33,10 +20,10 @@ const PhCategories = () => {
             <div className='grid gap-6 grid-cols-1 lg:grid-cols-3 md:grid-cols-2'>
                 {
                     categories.map(category =>
-                        <AllCategories
+                        <Realme
                             key={category._id}
                             category={category}
-                        ></AllCategories>
+                        ></Realme>
 
                     )
                 }
@@ -46,4 +33,4 @@ const PhCategories = () => {
     );
 };
 
-export default PhCategories;
+export default RealmeCardLoader;
