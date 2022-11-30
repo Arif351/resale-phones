@@ -21,10 +21,10 @@ const router = createBrowserRouter([
                 element: <AllPhones></AllPhones>
             },
 
-            // {
-            //     path: '/login',
-            //     element: <Login></Login>
-            // },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
             // {
             //     path: '/signup',
             //     element: <Signup></Signup>

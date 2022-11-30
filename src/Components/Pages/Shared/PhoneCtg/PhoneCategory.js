@@ -26,7 +26,9 @@ const PhoneCategory = ({ category }) => {
                 <div>
                     <h1 className="font-thin">Used time: {used_time}</h1>
                     <h2>Post: {posted_date}</h2>
-                    <p className='text-green-600'> <HiLocationMarker></HiLocationMarker> {location} </p>
+                </div>
+                <div>
+                    <p className='text-green-600 inline-flex gap-2'> <HiLocationMarker></HiLocationMarker> {location} </p>
                 </div>
                 <div className="card-actions justify-end">
                     <Link><button className="btn btn-outline btn-primary rounded-xl">Buy Now</button></Link>
