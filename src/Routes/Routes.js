@@ -6,6 +6,7 @@ import AppleLoader from "../Components/Pages/Shared/AllBrands/Apple/AppleLoader"
 import RealmeCardLoader from "../Components/Pages/Shared/AllBrands/Realme/RealmeCardLoader";
 import AllPhones from "../Components/Pages/Shared/PhoneCtg/AllPhones";
 import Signup from "../Components/Pages/Signup/Signup";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allPhones/:id',
-                element: <AllPhones></AllPhones>
+                element: <PrivateRoutes><AllPhones></AllPhones></PrivateRoutes>
             },
             {
                 path: '/login',

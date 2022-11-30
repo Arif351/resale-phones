@@ -31,7 +31,7 @@ const PhoneCategory = ({ category }) => {
                     <p className='text-green-600 inline-flex gap-2'> <HiLocationMarker></HiLocationMarker> {location} </p>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link><button className="btn btn-outline btn-primary rounded-xl">Buy Now</button></Link>
+                    <Link><button className="btn btn-outline btn-primary rounded-xl">Book Now</button></Link>
                 </div>
             </div>
             <div className='hidden'>

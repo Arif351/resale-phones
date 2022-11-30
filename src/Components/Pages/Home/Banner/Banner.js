@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img from '../../../../Assets/Banner/pexels-gabriel-freytez-341523.jpg';
 
 const Banner = () => {
+
+
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">

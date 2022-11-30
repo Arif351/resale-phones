@@ -5,7 +5,7 @@ import AllCategories from './AllCategories';
 
 
 const PhCategories = () => {
-    // const [categories, setCategories] = useState([]);
+
 
     const { data: categories = [] } = useQuery({
         queryKey: ['allPhones'],
