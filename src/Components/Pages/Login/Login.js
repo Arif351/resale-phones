@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [loginError, setLoginError] = useState('');
+    const { signIn } = useContext(AuthContext);
 
     const handleLogin = data => {
         console.log(data);
+        setLoginError('');
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message);
+                setLoginError(error.message)
+            })
     }
 
     return (
@@ -34,6 +47,7 @@ const Login = () => {
                     </div>
                     <input type="submit" className='text-white btn btn-active btn-info' />
                 </form>
+                {loginError && <p className='text-red-200 font-semibold mb-3'>{loginError}</p>}
                 <p>New to Cell Room? <Link to="/signup" className='text-blue-300 font-semibold'>Create new Account</Link> </p>
                 <div className="divider w-full max-w-xs">OR</div>
                 <button className='btn btn-outline w-full max-w-xs'>CONTINUE WITH GOOGLE</button>
