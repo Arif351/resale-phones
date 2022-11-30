@@ -18,14 +18,6 @@ const PhCategories = () => {
 
     });
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/allPhones')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setCategories(data);
-    //         })
-    // }, [])
-
     return (
         <section className='my-6'>
             <p className="text-4xl text-center text-sky-600 font-bold pb-8">Available Brands</p>
