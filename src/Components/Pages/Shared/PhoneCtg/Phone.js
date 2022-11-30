@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import BookingModal from '../BookingModal/BookingModal';
 import PhoneCategory from './PhoneCategory';
 
 const Phone = ({ phones }) => {
-    const { data } = phones
+    const [eachPhones, setEachPhones] = useState(null);
+
+    const { data } = phones;
     console.log(data);
 
     return (
@@ -16,11 +19,15 @@ const Phone = ({ phones }) => {
                         <PhoneCategory
                             key={category._id}
                             category={category}
+                            setEachPhones={setEachPhones}
                         ></PhoneCategory>
                     )
                 }
             </div>
-
+            {eachPhones &&
+                <BookingModal
+                    eachPhones={eachPhones}
+                ></BookingModal>}
         </section>
     );
 };

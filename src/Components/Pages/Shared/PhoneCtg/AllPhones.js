@@ -15,7 +15,6 @@ const AllPhones = () => {
             console.log(data);
             return data;
         }
-
     });
 
     return (

@@ -4,8 +4,8 @@ import { HiLocationMarker } from "react-icons/hi";
 
 
 
-const PhoneCategory = ({ category }) => {
-    const { unid, img, brand, name, location, resale_price, original_price, used_time, posted_date, seller_name } = category;
+const PhoneCategory = ({ category, setEachPhones }) => {
+    const { img, brand, name, location, resale_price, original_price, used_time, posted_date, seller_name } = category;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl rounded-md">
@@ -31,7 +31,7 @@ const PhoneCategory = ({ category }) => {
                     <p className='text-green-600 inline-flex gap-2'> <HiLocationMarker></HiLocationMarker> {location} </p>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link><button className="btn btn-outline btn-primary rounded-xl">Book Now</button></Link>
+                    <label onClick={() => setEachPhones(category)} className="btn btn-outline btn-primary rounded-xl" htmlFor="booking-modal">Book Now</label>
                 </div>
             </div>
             <div className='hidden'>
