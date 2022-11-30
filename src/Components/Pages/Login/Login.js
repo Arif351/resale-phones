@@ -6,8 +6,9 @@ const Login = () => {
     const [data, setData] = useState("");
     return (
         <div className='h-[600px] flex justify-center items-center '>
-            <div className='w-96 p-11 border-2 border-gray-300 bg-stone-500'>
-                <h1 className='text-center text-4xl text-white'>Login</h1>
+            <div className='w-96 p-11 border-2 border-green-700 bg-stone-500'>
+                <h1 className='text-center text-4xl font-semibold text-white pb-4'>Login</h1>
+                <hr />
                 <form className='card-body ' onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
                     <div className="form-control w-full max-w-xs ">
                         <label className="label">
