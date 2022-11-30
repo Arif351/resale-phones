@@ -17,12 +17,15 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
     const updateUser = (userInfo) => {
         return updateProfile(auth.currentUser, userInfo)
     }
+
     const googleLogin = (provider) => {
         return signInWithPopup(auth, provider)
     }
+
     const logout = () => {
         setLoading(true)
         return signOut(auth);
