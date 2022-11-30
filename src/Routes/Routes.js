@@ -20,15 +20,14 @@ const router = createBrowserRouter([
                 path: '/allPhones/:id',
                 element: <AllPhones></AllPhones>
             },
-
             {
                 path: '/login',
                 element: <Login></Login>
             },
-            // {
-            //     path: '/signup',
-            //     element: <Signup></Signup>
-            // }
+            {
+                path: '/signup',
+                element: <Signup></Signup>
+            }
         ]
     }
 ]);
