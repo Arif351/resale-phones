@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 const AllCategories = ({ category }) => {
     const { brand, img, _id } = category;
 
-
-    // console.log(category);
-    // console.log(category);
     return (
         <div className="card w-96 bg-base-100 shadow-xl rounded-md">
             <figure><img src={img} alt="Shoes" /></figure>

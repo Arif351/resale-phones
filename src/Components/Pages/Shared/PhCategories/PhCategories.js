@@ -15,7 +15,6 @@ const PhCategories = () => {
             console.log(data);
             return data;
         }
-
     });
 
     return (
@@ -29,11 +28,9 @@ const PhCategories = () => {
                             key={category._id}
                             category={category}
                         ></AllCategories>
-
                     )
                 }
             </div>
-
         </section>
     );
 };
