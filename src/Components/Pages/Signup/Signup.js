@@ -15,6 +15,7 @@ const Signup = () => {
 
     const handleSignup = (data) => {
         console.log(data);
+        signUpError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
@@ -77,6 +78,7 @@ const Signup = () => {
 
                     </div>
                     <input type="Submit" className='text-white btn btn-active btn-info' />
+                    {signUpError && <p className='text-red-300 font-semibold'>{signUpError}</p>}
                 </form>
                 <p>Already have an account? <Link to="/login" className='text-blue-300 font-semibold'>Login</Link> </p>
                 <div className="divider w-full max-w-xs">OR</div>
