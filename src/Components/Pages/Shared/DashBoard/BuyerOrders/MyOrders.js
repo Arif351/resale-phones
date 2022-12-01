@@ -1,8 +1,25 @@
-import React from 'react';
+import { async } from '@firebase/util';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const MyOrders = () => {
-    return (
 
+    const { user } = useContext(AuthContext);
+
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const { data: bookings = [] } = useQuery({
+        queryKey: ['bookings', user?.email],
+        queryFn: async () => {
+            const res = await fetch(url);
+            const data = await res.json()
+            return data;
+        }
+
+    })
+
+    return (
         <div>
             <h2 className='text-3xl text-red-100 my-4'>My Order List</h2>
             <div className="overflow-x-auto">
@@ -11,35 +28,31 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Ordered Phone Name</th>
+                            <th>Price</th>
+                            <th>Phone Number</th>
+                            <th>Meeting Location</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-
-                        <tr className="hover">
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                        </tr>
+                        {
+                            bookings.map((booking, i) =>
+                                <tr className="hover">
+                                    <th>{i + 1}</th>
+                                    <td>{booking.name}</td>
+                                    <td>{booking.phoneName}</td>
+                                    <td>{booking.price}</td>
+                                    <td>{booking.phoneNumber}</td>
+                                    <td>{booking.meetingLocation}</td>
+                                    <td><Link to='/allPhones'><button className='btn btn-info rounded-xl'>Pay</button></Link></td>
+                                </tr>)
+                        }
                     </tbody>
                 </table>
+
             </div>
+            <Link to="/"><button className="btn btn-wide btn-outline btn-accent my-8">Go to Mobile Collection</button></Link>
         </div>
     );
 };
