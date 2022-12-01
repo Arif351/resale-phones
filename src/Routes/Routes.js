@@ -13,6 +13,7 @@ import ReportedItems from "../Components/Pages/Shared/DashBoard/Admin/ReportedIt
 import AllPhones from "../Components/Pages/Shared/PhoneCtg/AllPhones";
 import Signup from "../Components/Pages/Signup/Signup";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import Blogs from "../Components/Pages/Shared/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
             {
                 path: '/allPhones/:id',
