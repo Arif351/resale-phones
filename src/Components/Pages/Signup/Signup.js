@@ -26,7 +26,7 @@ const Signup = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.option);
                     })
                     .catch(err => console.error(err))
             })
@@ -36,8 +36,8 @@ const Signup = () => {
             })
     }
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, option) => {
+        const user = { name, email, option };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -92,18 +92,12 @@ const Signup = () => {
                     </div>
                     <div>
                         <h2 className='text-amber-400 font-medium'>What type of Account?</h2>
-                        <div className="form-control">
-                            <label className="label cursor-pointer">
-                                <span className="label-text font-semibold text-white">Seller Account</span>
-                                <input type="radio" {...register("sellerAccount")} name="radio-10" className="radio checked:bg-red-700 " checked />
-                            </label>
-                        </div>
-                        <div className="form-control">
-                            <label className="label cursor-pointer">
-                                <span className="label-text font-semibold text-white">Buyer Account</span>
-                                <input type="radio" {...register("BuyerAccount")} name="radio-10" className="radio checked:bg-blue-700 " checked />
-                            </label>
-                        </div>
+                        <select {...register("option")} className="select w-full max-w-xs">
+                            <option disabled selected>What type of Account?</option>
+                            <option>Seller</option>
+                            <option>Buyer</option>
+                            <option>Admin</option>
+                        </select>
                     </div>
                     <input type="Submit" className='text-white btn btn-active btn-info  w-full max-w-xs my-4' />
                     {signUpError && <p className='text-red-300 font-semibold'>{signUpError}</p>}
