@@ -5,9 +5,7 @@ import PhoneCategory from './PhoneCategory';
 
 const Phone = ({ phones }) => {
     const [eachPhones, setEachPhones] = useState(null);
-
     const { data } = phones;
-    console.log(data);
 
     return (
         <section className='my-6'>
@@ -17,7 +15,7 @@ const Phone = ({ phones }) => {
                 {
                     data.map(category =>
                         <PhoneCategory
-                            key={category._id}
+                            key={category?._id}
                             category={category}
                             setEachPhones={setEachPhones}
                         ></PhoneCategory>
@@ -27,6 +25,7 @@ const Phone = ({ phones }) => {
             {eachPhones &&
                 <BookingModal
                     eachPhones={eachPhones}
+                    setEachPhones={setEachPhones}
                 ></BookingModal>}
         </section>
     );

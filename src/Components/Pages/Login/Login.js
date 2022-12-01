@@ -48,7 +48,7 @@ const Login = () => {
             <div className='w-96 p-11 border-2 rounded-2xl border-green-700 bg-stone-500'>
                 <h1 className='text-center text-4xl font-semibold text-white pb-4'>Login</h1>
                 <hr />
-                <form className='card-body ' onSubmit={handleSubmit(handleLogin)}>
+                <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control w-full max-w-xs ">
                         <label className="label">
                             <span className="label-text text-white">Email</span>
@@ -66,7 +66,7 @@ const Login = () => {
                             <span className="label-text text-white">Forget Password?</span>
                         </label>
                     </div>
-                    <input type="submit" className='text-white btn btn-active btn-info' />
+                    <input type="submit" className='text-white btn btn-active btn-info  w-full max-w-xs' />
                 </form>
                 {loginError && <p className='text-red-200 font-semibold mb-3'>{loginError}</p>}
                 <p>New to Cell Room? <Link to="/signup" className='text-blue-300 font-semibold'>Create new Account</Link> </p>

@@ -54,7 +54,7 @@ const Signup = () => {
             <div className='w-96 p-11 border-2 rounded-2xl  border-green-800 bg-stone-500'>
                 <h1 className='text-center text-4xl font-semibold text-white pb-4'>Signup</h1>
                 <hr />
-                <form className='card-body ' onSubmit={handleSubmit(handleSignup)}>
+                <form onSubmit={handleSubmit(handleSignup)}>
                     <div className="form-control w-full max-w-xs ">
                         <label className="label">
                             <span className="label-text text-white">Name</span>
@@ -77,10 +77,10 @@ const Signup = () => {
                         {errors.password && <p className='text-red-200 font-semibold'>{errors.password?.message}</p>}
 
                     </div>
-                    <input type="Submit" className='text-white btn btn-active btn-info' />
+                    <input type="Submit" className='text-white btn btn-active btn-info  w-full max-w-xs my-4' />
                     {signUpError && <p className='text-red-300 font-semibold'>{signUpError}</p>}
                 </form>
-                <p>Already have an account? <Link to="/login" className='text-blue-300 font-semibold'>Login</Link> </p>
+                <p>Already have an account? <Link to="/login" className='text-blue-300 font-semibold my-3'>Login</Link> </p>
                 <div className="divider w-full max-w-xs">OR</div>
                 <button onClick={handleGoogleLogin} className='btn btn-outline w-full max-w-xs'>CONTINUE WITH GOOGLE</button>
             </div>
