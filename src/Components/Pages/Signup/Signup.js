@@ -47,8 +47,6 @@ const Signup = () => {
             .catch(error => console.error(error));
     }
 
-
-
     return (
         <div className='h-[900px] flex justify-center items-center '>
             <div className='w-96 p-11 border-2 rounded-2xl  border-green-800 bg-stone-500'>
@@ -77,23 +75,24 @@ const Signup = () => {
                         {errors.password && <p className='text-red-200 font-semibold'>{errors.password?.message}</p>}
                     </div>
                     <div>
+                        <h2 className='text-amber-400 font-medium'>What type of Account?</h2>
                         <div className="form-control">
                             <label className="label cursor-pointer">
-                                <span className="label-text font-semibold text-white">Seller</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-red-700  " checked />
+                                <span className="label-text font-semibold text-white">Seller Account</span>
+                                <input type="radio" {...register("sellerAccount")} name="radio-10" className="radio checked:bg-red-700 " checked />
                             </label>
                         </div>
                         <div className="form-control">
                             <label className="label cursor-pointer">
-                                <span className="label-text font-semibold text-white">Buyer</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-blue-700 " checked />
+                                <span className="label-text font-semibold text-white">Buyer Account</span>
+                                <input type="radio" {...register("BuyerAccount")} name="radio-10" className="radio checked:bg-blue-700 " checked />
                             </label>
                         </div>
                     </div>
                     <input type="Submit" className='text-white btn btn-active btn-info  w-full max-w-xs my-4' />
                     {signUpError && <p className='text-red-300 font-semibold'>{signUpError}</p>}
                 </form>
-                <p>Already have an account? <Link to="/login" className='text-blue-300 font-semibold my-3'>Login</Link> </p>
+                <p className='text-sky-200'>Already have an account? <Link to="/login" className='text-blue-400 font-semibold my-3'>Login</Link> </p>
                 <div className="divider w-full max-w-xs">OR</div>
                 <button onClick={handleGoogleLogin} className='btn btn-outline w-full max-w-xs'>CONTINUE WITH GOOGLE</button>
             </div>
