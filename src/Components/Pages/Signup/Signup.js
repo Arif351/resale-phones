@@ -2,8 +2,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
-import AuthProvider, { AuthContext } from '../Context/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -12,21 +12,22 @@ const Signup = () => {
     const { createUser, googleLogin, updateUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-
     const handleSignup = (data) => {
         console.log(data);
-        signUpError('');
+        setSignUpError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User created successfully!')
-                navigate('/')
+
                 const userInfo = {
                     displayName: data.name,
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        navigate('/')
+                    })
                     .catch(err => console.error(err))
             })
             .catch(error => {
@@ -42,7 +43,6 @@ const Signup = () => {
                 const user = result.user;
                 toast.success('Signed up with gmail successfully!')
                 navigate('/')
-                console.log(user);
             })
             .catch(error => console.error(error));
     }
@@ -75,7 +75,20 @@ const Signup = () => {
                         </label>
                         <input type="password" {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be 6 characters or longer." } })} placeholder="password" className="input input-bordered input-secondary w-full max-w-xs" />
                         {errors.password && <p className='text-red-200 font-semibold'>{errors.password?.message}</p>}
-
+                    </div>
+                    <div>
+                        <div className="form-control">
+                            <label className="label cursor-pointer">
+                                <span className="label-text font-semibold text-white">Seller</span>
+                                <input type="radio" name="radio-10" className="radio checked:bg-red-700  " checked />
+                            </label>
+                        </div>
+                        <div className="form-control">
+                            <label className="label cursor-pointer">
+                                <span className="label-text font-semibold text-white">Buyer</span>
+                                <input type="radio" name="radio-10" className="radio checked:bg-blue-700 " checked />
+                            </label>
+                        </div>
                     </div>
                     <input type="Submit" className='text-white btn btn-active btn-info  w-full max-w-xs my-4' />
                     {signUpError && <p className='text-red-300 font-semibold'>{signUpError}</p>}

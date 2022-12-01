@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { HiLocationMarker } from "react-icons/hi";
+import { HiBadgeCheck, HiLocationMarker } from "react-icons/hi";
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 
 const PhoneCategory = ({ category, setEachPhones }) => {
+    const { user } = useContext(AuthContext);
+
     const { img, brand, name, location, resale_price, original_price, used_time, posted_date, seller_name } = category;
 
     return (
@@ -19,7 +22,11 @@ const PhoneCategory = ({ category, setEachPhones }) => {
                     <p>{name}</p>
                 </div>
                 <div>
-                    <h4>Seller Name: {seller_name}</h4>
+                    <h4 className='inline-flex font-semibold'>Seller Name:
+                        {seller_name}  {
+                            user?.email ? <HiBadgeCheck className='text-blue-500'></HiBadgeCheck> : 'User not verified'
+                        }
+                    </h4>
                     <p>Resale Price: {resale_price}</p>
                     <p>Original Price: {original_price}</p>
                 </div>
