@@ -14,6 +14,7 @@ import AllPhones from "../Components/Pages/Shared/PhoneCtg/AllPhones";
 import Signup from "../Components/Pages/Signup/Signup";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Blogs from "../Components/Pages/Shared/Blogs/Blogs";
+import Error404 from "../Components/Pages/Error404/Error404";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>
             }
         ],
+    },
+    {
+        path: '*',
+        element: <Error404></Error404>
+
     },
     {
         path: '/dashboard',

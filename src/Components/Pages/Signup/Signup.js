@@ -48,7 +48,18 @@ const Signup = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                navigate('/')
+                getUserToken(email);
+            })
+    }
+
+    const getUserToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('accessToken', data.accessToken)
+                    navigate('/')
+                }
             })
     }
 
@@ -92,11 +103,10 @@ const Signup = () => {
                     </div>
                     <div>
                         <h2 className='text-amber-400 font-medium'>What type of Account?</h2>
-                        <select {...register("option")} className="select w-full max-w-xs">
-                            <option disabled selected>What type of Account?</option>
+                        <select {...register("option")} required className="select w-full max-w-xs">
+                            <option disabled selected>What type of Account? </option>
                             <option>Seller</option>
                             <option>Buyer</option>
-                            <option>Admin</option>
                         </select>
                     </div>
                     <input type="Submit" className='text-white btn btn-active btn-info  w-full max-w-xs my-4' />

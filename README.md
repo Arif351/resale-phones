@@ -1,3 +1,16 @@
+<!-- 5 Bullet points about this project -->
+# React app, firebase installed and make a whole project structure 
+## Make an API, install cors, express, mongodb, jwt etc for client 
+### connect it with Mongodb database
+#### Make private route of seller, admin info
+##### run build, deploy on firebase
+
+## Live site link: 
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
