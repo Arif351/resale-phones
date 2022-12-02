@@ -10,7 +10,7 @@ const AllPhones = () => {
     const { data: phone = [] } = useQuery({
         queryKey: ['allPhones'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allPhones/${param.id}`)
+            const res = await fetch(`https://assignment-12-server-sigma-snowy.vercel.app/allPhones/${param.id}`)
             const data = await res.json();
             return data;
         }

@@ -7,7 +7,7 @@ import { AuthContext } from '../../../Context/AuthProvider';
 const MyBuyers = () => {
     const { user } = useContext(AuthContext);
 
-    const url = 'http://localhost:5000/buyers';
+    const url = 'https://assignment-12-server-sigma-snowy.vercel.app/buyers';
 
     const { data: buyers = [], refetch } = useQuery({
         queryKey: ['buyers', user?.email],
@@ -23,7 +23,7 @@ const MyBuyers = () => {
     });
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/buyers/admin/${id}`, {
+        fetch(`https://assignment-12-server-sigma-snowy.vercel.app/buyers/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

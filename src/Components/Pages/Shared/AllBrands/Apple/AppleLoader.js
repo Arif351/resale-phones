@@ -6,7 +6,7 @@ const AppleLoader = () => {
     const { data: categories = [] } = useQuery({
         queryKey: ['allPhones'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/apple')
+            const res = await fetch('https://assignment-12-server-sigma-snowy.vercel.app/apple')
             const data = await res.json();
             console.log(data);
             return data;

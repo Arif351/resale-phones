@@ -8,7 +8,7 @@ const Blogs = () => {
     const { data: blog = [] } = useQuery({
         queryKey: ['blog'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/blog')
+            const res = await fetch('https://assignment-12-server-sigma-snowy.vercel.app/blog')
             const data = await res.json();
             return data;
         }

@@ -5,7 +5,7 @@
 #### Make private route of seller, admin info
 ##### run build, deploy on firebase
 
-## Live site link: 
+Live site link: <https://resellphones-6529d.web.app/>
 
 
 adminEmail: <arifulislam@mail.com>
