@@ -21,8 +21,7 @@ const MyOrders = () => {
             const data = await res.json()
             return data;
         }
-
-    })
+    });
 
     return (
         <div>
@@ -31,7 +30,7 @@ const MyOrders = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Serial</th>
                             <th>Name</th>
                             <th>Ordered Phone Name</th>
                             <th>Price</th>
