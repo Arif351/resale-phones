@@ -15,6 +15,7 @@ import Signup from "../Components/Pages/Signup/Signup";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Blogs from "../Components/Pages/Shared/Blogs/Blogs";
 import Error404 from "../Components/Pages/Error404/Error404";
+import About from "../Components/Pages/Shared/About/About";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/about',
+                element: <About></About>
+
             },
             {
                 path: '/allPhones/:id',
