@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import img from '../../../../Assets/Banner/pexels-gabriel-freytez-341523.jpg';
+import img from '../../../../Assets/Banner/Flash Sale.jpg';
 import { AuthContext } from '../../Context/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 

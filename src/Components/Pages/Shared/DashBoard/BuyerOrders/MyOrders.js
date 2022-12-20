@@ -42,13 +42,13 @@ const MyOrders = () => {
                     <tbody>
                         {
                             bookings.map((booking, i) =>
-                                <tr className="hover">
+                                <tr key={booking._id} className="hover">
                                     <th>{i + 1}</th>
-                                    <td>{booking.name}</td>
-                                    <td>{booking.phoneName}</td>
-                                    <td>{booking.price}</td>
-                                    <td>{booking.phoneNumber}</td>
-                                    <td>{booking.meetingLocation}</td>
+                                    <td>{booking?.name}</td>
+                                    <td>{booking?.phoneName}</td>
+                                    <td>{booking?.price}</td>
+                                    <td>{booking?.phoneNumber}</td>
+                                    <td>{booking?.meetingLocation}</td>
                                     <td><Link to='/allPhones'><button className='btn btn-info rounded-xl'>Pay</button></Link></td>
                                 </tr>)
                         }

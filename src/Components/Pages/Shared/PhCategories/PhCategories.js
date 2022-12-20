@@ -2,10 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import AllCategories from './AllCategories';
 
-
-
 const PhCategories = () => {
-
 
     const { data: categories = [] } = useQuery({
         queryKey: ['allPhones'],

@@ -4,9 +4,8 @@ import about from '../../../../Assets/about/about.jpg';
 const About = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
-
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={about} className="w-6/12 rounded-lg shadow-2xl" />
+                <img src={about} className="w-6/12 rounded-lg shadow-2xl" alt='' />
                 <div className='ml-7'>
                     <h1 className="text-5xl font-bold text-white">ABOUT <span className='text-sky-400'>US</span> </h1>
                     <p className="py-6">Cell Room is the combination of first ever e-commerce and re-commerce marketplace in Bangladesh where customers can purchase anything by personalized orders as well as sell their unneeded/surplus products such as smartphones, laptops, appliances, vehicles, etc. and exchange also.  <br />  <br />

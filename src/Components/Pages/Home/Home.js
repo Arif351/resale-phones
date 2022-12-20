@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthProvider';
 import PhCategories from '../Shared/PhCategories/PhCategories';
 import Banner from './Banner/Banner';
+import Section from './Section';
 
 const Home = () => {
     const { loading } = useContext(AuthContext);
@@ -13,6 +14,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PhCategories></PhCategories>
+            <Section></Section>
         </div>
     );
 };

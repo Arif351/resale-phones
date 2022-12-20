@@ -7,6 +7,7 @@ const BookingModal = ({ eachPhones, setEachPhones }) => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const { name, original_price } = eachPhones;
+
     const handleBooking = (e) => {
         e.preventDefault();
         const form = e.target;

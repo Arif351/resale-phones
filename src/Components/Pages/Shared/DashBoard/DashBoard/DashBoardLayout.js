@@ -8,6 +8,7 @@ const DashBoardLayout = () => {
 
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email)
+    // const [isSeller] = SellerPanel()
 
     return (
         <div>
@@ -22,9 +23,10 @@ const DashBoardLayout = () => {
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
                         {/* BUYER */}
+
                         <li><Link to='/dashboard'>My Orders</Link></li>
                         {/* SELLER */}
-                        <li><Link to='/dashboard/sellerAddaProuct'>Add a Product</Link></li>
+                        <li><Link to='/dashboard/AddedProduct'> Add a Product</Link></li>
                         <li><Link to='/dashboard/myProducts'> My Products</Link></li>
 
                         {/* admin */}

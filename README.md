@@ -4,6 +4,7 @@
 ### connect it with Mongodb database
 #### Make private route of seller, admin info
 ##### run build, deploy on firebase
+###### https://assignment-12-server-sigma-snowy.vercel.app
 
 Live site link: <https://resellphones-6529d.web.app/>
 

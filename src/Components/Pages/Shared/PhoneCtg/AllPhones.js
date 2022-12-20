@@ -31,5 +31,5 @@ const AllPhones = () => {
         </section>
     );
 };
-
+// https://assignment-12-server-sigma-snowy.vercel.app
 export default AllPhones;
